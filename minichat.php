@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+    <title>phpexperience</title>
+  </head>
+
+  <body> 
+  <div id="main">
+  	<div class="container-fluid p-5 bg-primary text-white text-center">
+  		<h1>phpexperience</h1>
+  		<p>Toute la force du PHP!</p> 
+  	</div>
+  	<div class="container mt-5">
+  		<h3>Un Minichat</h3>
+  		<form action="http://127.0.0.1:8888/phpknowledge/minichat/" method="post">
+<p>
+<label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo"/><br/>
+<label for="message">Message</label> :  <input type="text" name="message" id="message"/><br/>
+
+<input type="submit" value="Envoyer"/>
+</p>
+</form>
+
+<?php
+// Connexion à la base de données
+try
+{
+$bdd = new PDO('mysql: host=localhost; dbname=phpknowledge; charset=utf8', 'root', '');
+}
+catch(Exception $e)
+{
+die('Erreur : ' .$e->getMessage());
+}
+
+// Insertion du message à l'aide d'une requête préparée
+$req=$bdd->prepare('INSERT INTO minichat (pseudo, message) VALUES(?, ?)');
+$req->execute(array($_POST['pseudo'], $_POST['message']));
+
+// Récupération des 10 derniers messages
+$reponse=$bdd->query('SELECT pseudo, message FROM minichat ORDER BY ID DESC LIMIT 0, 10');
+
+// Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+while($donnees=$reponse->fetch())
+{
+echo'<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+}
+
+$reponse->closeCursor();
+
+?>
+  	</div> 
+  </div> 
+  </body>
+</html>
