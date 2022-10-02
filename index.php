@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
-    <title>phpexperience</title>
+    <title>phpexperience - Toute la force du PHP!</title>
   </head>
 
   <body> 
