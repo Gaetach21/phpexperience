@@ -1,3 +1,17 @@
+<?php
+    session_start();
+ 
+    $pseudo_tchat = "gaetan@21";
+    if(!empty($_POST['pseudo']))//Si un pseudo a été rentré dans le formulaire
+    {
+        $pseudo_tchat = securisation_variable($_POST['pseudo']);//on l'affecte
+        setcookie('nom', $pseudo_tchat, time() + 365*24*3600, null, null, false, true);//On créé le cookie
+    }
+    elseif(!empty($_COOKIE['nom']))//Si aucun pseudo dans le formulaire, mais un pseudo retenu par un cookie
+    {
+        $pseudo_tchat = $_COOKIE['nom'];//On l'affecte
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +19,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
-    <title>phpexperience | un minichat</title>
+    <title>phpexperience | Retenir le pseudo</title>
   </head>
 
   <body> 
@@ -19,10 +33,10 @@
   	<div class="container mt-5">
       <div class="row">
         <div class="col-sm-6">
-  		<h3>Un Minichat</h3>
+  		<h3>Minichat - Retenir le pseudo</h3>
   		<form action="minichat_post.php" method="post">
 <p>
-<label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" class="form-control" /><br/>
+<label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" class="form-control" value =" <?php echo $pseudo_tchat; ?> " /><br/>
 <label for="message">Message</label> : <input type="text" name="message" id="message" class="form-control"/><br/>
 <input type="submit" value="Envoyer" class="form-control bg-primary" />
 </p>
@@ -32,8 +46,8 @@
 <div class="col-sm-6">
 <h3>Améliorations du minichat</h3>
 <ul>
-  <li><a href="minichat2.php">Retenir le pseudo</a></li>
-  <li><a href="#">Afficher les anciens messages</a></li>
+  <li><a href="minichat.php">Minichat</a></li>
+  <li><a href="">Afficher les anciens messages</a></li>
 </ul>
 </div>
 </div>
