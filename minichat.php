@@ -33,7 +33,7 @@
 <h3>Améliorations du minichat</h3>
 <ul>
   <li><a href="minichat2.php">Retenir le pseudo</a></li>
-  <li><a href="#">Afficher les anciens messages</a></li>
+  <li><a href="minichat3.php">Afficher les anciens messages</a></li>
 </ul>
 </div>
 </div>
