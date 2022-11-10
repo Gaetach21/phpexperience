@@ -19,7 +19,7 @@
   		<ol>
   			<li><a href="">une page protégée par un mot de passe</a></li>
   			<li><a href="minichat.php">un minichat</a></li>
-  			<li><a href="">un livre d'or</a></li>
+  			<li><a href="livreor.php">un livre d'or</a></li>
   			<li><a href="">un système de news</a></li>
   			<li><a href="">nombre de visiteurs connectés</a></li>
   			<li><a href="">un blog avec des commentaires</a></li>
