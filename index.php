@@ -17,7 +17,7 @@
   	<div class="container mt-5">
   		<h3>Travaux Pratiques sur le PHP</h3>
   		<ol>
-  			<li><a href="">une page protégée par un mot de passe</a></li>
+  			<li><a href="authentication_page.php">une page d'authentification</a></li>
   			<li><a href="minichat.php">un minichat</a></li>
   			<li><a href="livreor.php">un livre d'or</a></li>
   			<li><a href="">un système de news</a></li>
