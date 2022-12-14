@@ -28,6 +28,11 @@
   			<li><a href="">un chat</a></li>
   		</ol>
   	</div> 
+    <h3 class="p-2">Liste des cours</h3>
+    <ol>
+      <li><a href="cours/chap1.php">Introduction au PHP</a></li>
+      <li><a href="">Préparez son environnement de travail</a></li>
+    </ol>
   </div> 
   </body>
 </html>
