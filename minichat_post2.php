@@ -22,7 +22,7 @@ setcookie('pseudo', $_POST['pseudo'], time() + 365*24*3600, null, null, false, t
 // Connexion à la base de données
 try
 {
-$bdd = new PDO('mysql:host=localhost; dbname=phpexperience; charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost; dbname=phpexperience; charset=utf8', 'root', '123abc456');
 }
 catch(Exception $e)
 {

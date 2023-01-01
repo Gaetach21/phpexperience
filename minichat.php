@@ -44,7 +44,7 @@
 // Connexion à la base de données
 try
 {
-$bdd = new PDO('mysql:host=localhost; dbname=phpexperience; charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost; dbname=phpexperience; charset=utf8', 'root', '123abc456');
 }
 catch(Exception $e)
 {
