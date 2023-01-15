@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+        <link href="../css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
     <title>phpexperience - Toute la force du PHP!</title>
   </head>
 
@@ -33,21 +33,65 @@
       </ol>
       </div>
 
-       <div class="col-md-6">
+         <div class="col-md-6">
     <h3 class="p-2">Liste des cours</h3>
     <ol>
       <li><a href="cours/chap1.php">Introduction au PHP</a></li>
       <li><a href="">Préparez son environnement de travail</a></li>
       <li><a href="cours/chap8.php">Les fonctions en PHP</a></li>
     </ol>
+
+      <div class="p-2">
+    <h1>Les fonctions en PHP</h1>
+    <?php
+    /*function Bonjour()
+    {
+      echo "Bonjour à tous!";
+    }
+      Bonjour();*/
+
+      /*function BonjourUtilisateur($prenom)
+    {
+      echo '<h3>Bonjour '.$prenom.' !</h3>';
+    }
+      BonjourUtilisateur('Gaetan');*/
+
+      /*function NomAge($prenom,$age)
+    {
+      echo '<h3>'.$prenom.' a '.$age. ' ans!</h3>';
+    }
+      NomAge('Gaetan', 29);*/
+
+      function Bonjour()
+    {
+      return "Bonjour à tous!<br/>";
+    }
+    function Bonsoir()
+    {
+      echo "Bonsoir à tous!<br/>";
+    }
+      $bonjour = Bonjour();
+      $bonsoir = Bonsoir();
+
+      echo $bonjour;
+      echo $bonsoir;
+
+
+    ?>
+   </div>
     </div>
-    
+
       </div>
-    </div>  
+    </div> 
+
+
 
      
 
 
+
   </div> 
+
+
   </body>
 </html>

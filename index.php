@@ -14,7 +14,10 @@
   		<h1>phpexperience</h1>
   		<p>Toute la force du PHP!</p> 
   	</div>
+    
   	<div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
   		<h3>Travaux Pratiques sur le PHP</h3>
   		<ol>
   			<li><a href="cours.php">cours</a></li>
@@ -22,12 +25,16 @@
   			<li><a href="minichat.php">un minichat</a></li>
   			<li><a href="livreor.php">un livre d'or</a></li>
   			<li><a href="index_commentaires.php">un blog avec des commentaires</a></li>
+  			<li><a href="upload.php">upload de fichiers</a></li>
         <li><a href="">un système de news</a></li>
   			<li><a href="">nombre de visiteurs connectés</a></li>
   			<li><a href="">un espace membres</a></li>
   			<li><a href="">un chat</a></li>
   		</ol>
+      </div>
+      </div>
   	</div> 
+
   </div> 
   </body>
 </html>
