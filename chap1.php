@@ -43,8 +43,8 @@
         <li><strong>Ruby</strong></li>
       </ul>
       </p> -->
-      <div>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Préparez son environnement de travail</a>
+      <div style="margin-top: 10px;">
+    <a href="chap2.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Préparez son environnement de travail</a>
   </div>
       </div>
 
