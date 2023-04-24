@@ -4,24 +4,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
-    <title>phpexperience | un blog avec des commentaires</title>
-    <link rel="stylesheet" type="text/css" href="css/blog.css">
+        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+        <link href="css/blog.css" rel ="stylesheet" type="text/css" media="all">
+    <title>phpexperience | un blog avec commentaires</title>
   </head>
 
-  <body> 
-  <div id="main">
+  <body>
+    <!-- En-tete-->
+    <?php include("includes/header.php")?>
+  
 
-  	<div class="container-fluid p-5 bg-primary text-white text-center">
-  		<h1>phpexperience</h1>
-  		<p>Toute la force du PHP!</p> 
-  	</div>
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
 
-  	<div class="container mt-5">
+
+    <section>
+            <div id="main">
+              <div class="container mt-5">
       <div class="row">
         <div class="col-sm-6">
         <h1>Mon super blog !</h1>
-        <p>Derniers billets du blog :</p>
+        <p style="text-align: center;">Derniers billets du blog :</p>
 </div>
 </div>
 
@@ -38,7 +41,7 @@ die('Erreur : ' .$e->getMessage());
 }
 
 // On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 5');
+$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 1');
 
 while ($donnees = $req->fetch())
 {
@@ -63,7 +66,18 @@ while ($donnees = $req->fetch())
 $req->closeCursor();
 ?>
 
-  	</div> 
-  </div> 
+    </div>
+            </div>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+      
+    </section>
+
+   <!-- Pied de page-->
+   <?php include("includes/footer.php")?>
+   
+   
   </body>
 </html>
+    
