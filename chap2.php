@@ -43,7 +43,7 @@
       </ul> -->
       <div style="margin-top: 10px;">
     <a href="chap1.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Introduction au PHP</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les bases du PHP</a>
+    <a href="chap3.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les bases du PHP</a>
   </div>
       </div>
 
