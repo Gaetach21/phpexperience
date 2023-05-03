@@ -1,7 +1,7 @@
 <section class="banniere" id="banniere">
 <div class="contenu">
 <h1>phpexperience</h1>
-<a href="#" class="btn">inscription</a>
+<a href="inscription.php#main" class="btn">inscription</a>
 <a href="#" class="btn" style="background-color: rgb(128,128,128);">connexion</a>
 
 <!-- <h1>J'apprends le PHP</h1>
