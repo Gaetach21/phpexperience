@@ -20,31 +20,51 @@
     <section>
             <div id="main">
     <h1>Les variables en PHP</h1>
-    <p>On peut écrire le code PHP n'importe ou dans une page HTML.<br>
-    Pour utiliser du PHP, on va devoir introduire la  balise PHP. Elle commence par <?php echo "<?php"; ?> et se termine par <?php echo "?>"; ?></p>
-    <h2>Les instructions echo et print</h2>
-    <p><strong>echo</strong> et <strong>print</strong> servent à afficher du texte, des nombres, etc.<br>
-    <?php echo "Ceci est écrit en PHP"; ?><br>
-      <?php print "Ceci est affiché grace à print"; ?><br>
-    <?php echo "Ceci est du <strong>texte</strong>"; ?><br>
-    <?php echo "Cette ligne a été écrite \"uniquement\" en PHP."; ?>
-    <br><strong>echo</strong> peut retourner plusieurs chaines de caractères alors que <strong>print</strong> n'en retourne qu'une seule.</p>
-    <!-- <h2>Les commentaires en PHP</h2>
-    <p>Un <strong>commentaire</strong> est un texte que vous mettez pour vous dans le code PHP. Ce texte est ignoré, c'est-à-dire qu'il disparaît complètement lors de la génération de la page. Il n'y a que vous qui voyez ce texte.</p>
-    <p>Il existe deux types de commentaire : les commentaires monolignes et les commentaires multilignes. 
-    </p>
-    <p>Pour indiquer que vous écrivez un commentaire sur une seule ligne, vous devez taper deux slashs : «//». Tapez ensuite votre commentaire.</p>
-    <p>Pour un commentaire multiligne, Il faut commencer par écrire/*puis refermer par*/
-    </p>
-    <h2>L'instruction include</h2>
-    <p>Une page PHP peut inclure une autre page (ou un morceau de page) grâce à l'instruction include.</p>
-    <p>L'instruction include  sera remplacée par le contenu de la page demandée.</p>
-    <p>Cette technique, très simple à mettre en place, permet par exemple de placer les menus de son site dans un fichier menus.php  que l'on inclura dans toutes les pages. Cela permet de centraliser le code des menus, alors qu'on était auparavant obligés de le copier dans chaque page sur nos sites statiques en HTML et CSS !</p>
-    <p>Exemple d'utilisation: <br>
-    <img src="images/include.png"></p> -->
+    <h2>Affectation et affichage</h2>
+    <?php 
+    $departement = "var"; //type string
+    $chiffre = 83; //type integer
+    $pi = 3.14; //type float
+    $variable1 = true; //type booleen
+    $variable2 = false;
+    //Pour afficher le contenu d'une variable
+    echo $departement.'<br>';
+    echo $chiffre.'<br>';
+    
+    ?>
+    <h2>La concaténation</h2>
+    <p>La concaténation est justement un moyen d'assembler du texte et des variables.</p>
+    <?php
+    echo "Le $departement est un département de France <br>";
+    echo 'Le '.$departement. ' est un département de France <br>';
+    ?>
+    <h2>Les opérations simples</h2>
+    <?php
+    $nombre1 = 5;
+    $nombre2 = 3;
+    $addition = $nombre1 + $nombre2;  
+    $soustraction = $nombre1 - $nombre2; 
+    $multiplication = $nombre1  *  $nombre2; 
+    $division = $nombre1 / $nombre2; 
+    $modulo = $nombre1  %   $nombre2; 
+    echo 'addition : '.$addition.'<br>';
+    echo 'soustraction : '.$soustraction.'<br>';
+    echo 'multiplication : '.$multiplication.'<br>';
+    echo 'division : '.$division.'<br>';
+    echo 'modulo : '.$modulo.'<br>';
+    echo $nombre1. '+' .$nombre2. '<br>';
+    $addition = 20;
+    $soustraction = $soustraction -$soustraction;
+    $multiplication = $addition;
+    echo 'Nouvelle valeur addition : '. $addition.'<br>';
+    echo 'Nouvelle valeur soustraction : '. $soustraction.'<br>';
+    echo 'Nouvelle valeur multiplication : '. $multiplication.'<br><br>';
+
+    ?>
+
       <div style="margin-top: 10px;">
-    <a href="chap2.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Préparez son environnement de travail</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les variables en PHP</a>
+    <a href="chap3.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les bases du PHP</a>
+    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les conditions en PHP</a>
   </div>
       </div>
 

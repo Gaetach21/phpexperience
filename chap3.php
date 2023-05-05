@@ -44,7 +44,7 @@
     <img src="images/include.png"></p> -->
       <div style="margin-top: 10px;">
     <a href="chap2.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Préparez son environnement de travail</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les variables en PHP</a>
+    <a href="chap4.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les variables en PHP</a>
   </div>
       </div>
 
