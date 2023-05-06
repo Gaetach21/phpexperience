@@ -23,6 +23,9 @@
               <style type="text/css">
                 span {color: red; font-size: 1.2em;}
               </style>
+
+            
+
 <?php
 // Connexion à la base de données
 try
@@ -34,8 +37,7 @@ catch(Exception $e)
 die('Erreur : ' .$e->getMessage());
 }
 
-/*par défaut, on affiche le formulaire (quand il validera le formulaire sans erreur avec l'inscription validée, on l'affichera plus)*/
-$AfficherFormulaire=1;
+
 
 //traitement du formulaire:
 if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
@@ -44,9 +46,9 @@ if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
   $_POST['mdp'] = htmlspecialchars($_POST['mdp']);
   $_POST['confmdp'] = htmlspecialchars($_POST['confmdp']);
 //On les rend inoffensives, les balises HTML que le visiteur a pu entrer.
-//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
+//On vérifie si l'utilisateur a entré un pseudo
     if(empty($_POST['pseudo'])){
-    //le champ pseudo est vide, on arrête l'exécution du script et on affiche un message d'erreur
+    //Si le champ pseudo est vide, on arrête l'exécution du script et on affiche un message d'erreur
         echo "<span>Le champ Pseudo est vide!</span>";
     } 
     elseif(!preg_match("#^[a-z0-9]+$#",$_POST['pseudo'])){
@@ -62,7 +64,7 @@ if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
         echo "<span>Le pseudo est trop long, il dépasse 25 caractères!</span>";
     } 
     elseif(empty($_POST['mail'])){
-    //le champ mot de passe est vide
+    //le champ mail est vide
         echo "<span>Le champ Adresse email est vide!</span>";
     } 
     elseif(!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$_POST['mail'])){
@@ -79,12 +81,12 @@ if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
     }
 
     elseif(empty($_POST['confmdp'])){
-    //le champ mot de passe est vide
-        echo "<span>Le champ Confirmation est vide!</span>";
+    //le champ confirmation est vide
+        echo "<span>Le champ Confirmation du mot de passe est vide!</span>";
     }  
     
     elseif($_POST['mdp'] != $_POST['confmdp']){
-    //le champ mot de passe est vide
+    //le champ confirmation du mot de passe ne correspond pas
         echo "<span>La confirmation du mot de passe ne correspond pas!</span>";
     }  
     elseif($bdd->query("SELECT count(*) FROM inscription WHERE pseudo='".$_POST['pseudo']."'")->fetchColumn() == 1){
@@ -92,35 +94,23 @@ if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
         echo "<span>Ce pseudo est déjà utilisé!</span>";
     } 
     else {
-        /*toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
-        Bien évidement il s'agit là d'un script simplifié au maximum, libre à vous de rajouter des conditions avant l'enregistrement comme la longueur minimum du mot de passe par exemple*/
+        //toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
+      //on crypte le mot de passe avec la fonction password_hash()
         $req = $bdd->prepare("INSERT INTO inscription SET pseudo='".$_POST['pseudo']."', mail='".$_POST['mail']."', mdp='".password_hash($_POST['mdp'], PASSWORD_DEFAULT)."',date_inscription = NOW()");
         $insert = $req->execute(array($_POST['pseudo'], $_POST['mail'],$_POST['mdp']));
         if(!$insert){
-        //on crypte le mot de passe avec la fonction propre à PHP: md5()
-            echo "<span>Une erreur s'est produite!</span>";//je conseille de ne pas afficher les erreurs aux visiteurs mais de l'enregistrer dans un fichier log
+        
+            echo "<span>Une erreur s'est produite!</span>";
         } else {
-            echo "Vous êtes inscrit avec succès!";
-            //on affiche plus le formulaire
-            $AfficherFormulaire=0;
+            echo '<center><strong>'.$_POST['pseudo'].'</strong> Vous êtes inscrit avec succès!</center>';
+            
         }
     }
 }
-if($AfficherFormulaire==1){
+
     ?>
-    <!-- 
-    Les balises <form> sert à dire que c'est un formulaire
-    on lui demande de faire fonctionner la page inscription.php une fois le bouton "S'inscrire" cliqué
-    on lui dit également que c'est un formulaire de type "POST"
-     
-    Les balises <input> sont les champs de formulaire
-    type="text" sera du texte
-    type="password" sera des petits points noir (texte caché)
-    type="submit" sera un bouton pour valider le formulaire
-    name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
-     -->
-    <br />
-                  <div class="container">
+
+      <div class="container">
       <h1>Bienvenue sur la page d'inscription</h1>
       
       <form method="post" action="inscription.php">
@@ -139,9 +129,6 @@ if($AfficherFormulaire==1){
         <input type="submit" value="S'inscrire">
     </form>
     </div>
-    <?php
-}
-?>
 
 
      
