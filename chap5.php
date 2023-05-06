@@ -127,7 +127,7 @@ switch ($note) // on indique sur quelle variable on travaille
 
       <div style="margin-top: 10px;">
     <a href="chap4.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les variables du PHP</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les boucles en PHP</a>
+    <a href="chap6.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les boucles en PHP</a>
   </div>
       </div>
 
