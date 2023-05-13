@@ -26,7 +26,7 @@
         <li><a href="livreor.php">un livre d'or</a></li>
         <li><a href="index_commentaires.php">un blog avec des commentaires</a></li>
         <li><a href="upload.php#main">upload de fichiers</a></li>
-        <li><a href="#">un système de news</a></li>
+        <li><a href="index_news.php#main">un système de news</a></li>
         <li><a href="#">nombre de visiteurs connectés</a></li>
         <li><a href="#">un espace membres</a></li>
         <li><a href="#">un chat</a></li>
