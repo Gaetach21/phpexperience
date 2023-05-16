@@ -18,6 +18,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
         <div>
       <h1>Un Livre d'or</h1>
@@ -128,9 +132,6 @@ $reponse->closeCursor();
 ?>
      
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

@@ -124,15 +124,58 @@ header .navbar li  a:hover
 
 section
 {
-height: 550px;
+
 margin-top: 20px;
 }
 
-section #main
+section aside
 {
 float: left;
-width: 1020px;
 margin-right: 15px;
+width: 235px;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+padding: 10px;
+color: black;
+margin-bottom: 5px;
+margin-top: 50px;
+margin-left: 10px;
+border: 1px solid #64abfb;
+} 
+ 
+
+section aside h1
+{
+background-color: #64abfb;
+color: rgb(255, 255, 255);
+padding: 5px 10px;
+font-family: Verdana, Arial, serif;
+font-size: 18px;
+margin: 0px;
+font-weight: normal;
+border-radius: 10px 10px 0px 0px;
+text-transform: none;
+display: block;
+width: 235px;
+position: relative;
+right: 10px;
+bottom: 10px;
+text-align: center;
+}
+ 
+ 
+section aside p
+{
+font-family: Verdana, Arial, serif;
+font-size: 0.8em;
+color: rgb(124, 123, 123);
+}
+
+
+section #main
+{
+margin-left: 255px;
+width: 1020px;
 padding: 15px 25px;
 
 
@@ -178,46 +221,7 @@ font-family: Verdana, Arial, serif;
 font-size: 18px;
 } 
 
-section aside
-{
-margin-left: 1040px;
-width: 235px;
-background-color: rgb(255, 255, 255);
-border-radius: 10px;
-padding: 10px;
-color: black;
-margin-bottom: 5px;
 
-border: 1px solid #64abfb;
-} 
- 
-
-section aside h1
-{
-background-color: #64abfb;
-color: rgb(255, 255, 255);
-padding: 5px 10px;
-font-family: Verdana, Arial, serif;
-font-size: 18px;
-margin: 0px;
-font-weight: normal;
-border-radius: 10px 10px 0px 0px;
-text-transform: none;
-display: block;
-width: 235px;
-position: relative;
-right: 10px;
-bottom: 10px;
-text-align: center;
-}
- 
- 
-section aside p
-{
-font-family: Verdana, Arial, serif;
-font-size: 0.8em;
-color: rgb(124, 123, 123);
-}
 
 
 

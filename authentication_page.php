@@ -18,6 +18,11 @@
 
 
     <section>
+      
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
+
             <div id="main">
                   <p class="p-2">Veuillez entrer les coordonnées de l'administrateur pour obtenir un accès total à ce site :</p>
     <div class="container mt-5">
@@ -44,9 +49,6 @@
         <p class="p-2">Cette page est réservée à l'administrateur de ce site. Si vous n'etes pas l'administrateur de ce site, inutile d'insister vous ne trouverez jamais les bons coordonnées ! ;-)</p>
 
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

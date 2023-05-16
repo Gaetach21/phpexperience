@@ -4,11 +4,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
     <title>phpexperience | un minichat</title>
   </head>
 
-  <body> 
+  <body>
+    <!-- En-tete-->
+    <?php include("includes/header.php")?>
+  
+
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
+
+
+    <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
   <div id="main">
 
   	<div class="container mt-5">
@@ -47,5 +59,12 @@ header('Location: minichat.php');
 ?>
   	</div> 
   </div> 
+ 
+    </section>
+
+   <!-- Pied de page-->
+   <?php include("includes/footer.php")?>
+   
+   
   </body>
 </html>

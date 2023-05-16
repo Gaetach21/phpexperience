@@ -18,6 +18,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
       <h1>
         <?php
@@ -32,9 +36,6 @@
       </p>
       <p>Nous vous répondrons dans les plus brefs délais</p>
       </div>
-
-      <!-- aside-->
-    <?php include("aside.php")?>
       
     </section>
 

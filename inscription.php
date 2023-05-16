@@ -19,6 +19,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
               <style type="text/css">
                 span {color: red; font-size: 1.2em;}
@@ -133,9 +137,6 @@ if(isset($_POST['pseudo'],$_POST['mail'],$_POST['mdp'],$_POST['confmdp'])){
 
      
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

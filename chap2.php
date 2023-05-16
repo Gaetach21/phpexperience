@@ -18,6 +18,11 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
+ 
             <div id="main">
     <h1>Préparez son environnement de travail</h1>
     <h2>Travailler en local</h2>
@@ -25,11 +30,11 @@
 
     <h2>Rechercher une architecture serveur sur son ordinateur</h2>
     <p>Pour travailler en local, il faut transformer son ordinateur en serveur. En effet, les clients ne savent pas lire le PHP.</p>
-    <!-- <p>Pour cela, il suffit d'installer:</p>
+    <p>Pour cela, il suffit d'installer:</p>
       <ul>
-        <li>WAMP sous Windows</li>
-        <li>MAMP sous Mac</li>
-        <li>XAMPP sous Linux</li>
+        <li style="color: black;">WAMP sous Windows</li>
+        <li style="color: black;">MAMP sous Mac</li>
+        <li style="color: black;">XAMPP sous Linux</li>
       </ul>
     
 
@@ -37,19 +42,15 @@
     <p>Il existe énormément d'éditeurs de texte sur le marché aux fonctionnalités plus ou moins équivalente.</p>
     <p>Parmi les éditeurs de texte, on retrouve:</p>
       <ul>
-        <li>Notepad++</li>
-        <li>SublimeText</li>
-        <li>Visual Studio Code</li>
-      </ul> -->
-      <div style="margin-top: 10px;">
+        <li style="color: black;">Notepad++</li>
+        <li style="color: black;">SublimeText</li>
+        <li style="color: black;">Visual Studio Code</li>
+      </ul>
+      <div style="margin: 20px 0px;">
     <a href="chap1.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Introduction au PHP</a>
     <a href="chap3.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les bases du PHP</a>
   </div>
       </div>
-
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

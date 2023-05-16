@@ -22,6 +22,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
             <div class="container">
       <h1>Formulaire d'upload de fichiers</h1>
@@ -83,9 +87,6 @@ if(isset($_POST['Envoi'])){
 
     
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

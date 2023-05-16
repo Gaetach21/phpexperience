@@ -18,6 +18,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
       <div class="container mt-5">
         <div style="width: 400px; float: left;">
@@ -67,9 +71,6 @@ $reponse->closeCursor();
 ?>
     </div> 
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

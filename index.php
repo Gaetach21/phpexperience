@@ -18,6 +18,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
             <div id="main">
       <h1 id="accueil">Travaux Pratiques sur le PHP</h1>
       <ol>
@@ -33,9 +37,6 @@
       </ol>
       </div>
 
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
-      
     </section>
 
    <!-- Pied de page-->

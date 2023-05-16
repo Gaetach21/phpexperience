@@ -18,6 +18,11 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
+ 
             <div id="main">
     <h1>Les boucles en PHP</h1>
     <h2>Introduction</h2>
@@ -37,7 +42,7 @@
 
     <h2>La boucle do...while</h2>
     Cette boucle exécute le bloc de code au moins une fois et vérifie ensuite si la condition donnée est vraie.<br>
-    <!-- <?php
+    <?php
     $x = 1;
     do {
         echo 'Ceci est le nombre : '.$x.'<br />';
@@ -61,22 +66,18 @@
     {
         echo 'Ceci est le nombre n°' . $x . '<br />';
     }
-    ?>-->
+    ?>
 
 
     <br> 
 
 
 
-      <div style="margin-top: 10px;">
+      <div style="margin: 20px 0px;">
     <a href="chap5.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les conditions en PHP</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les tableaux en PHP</a>
+    <a href="chap7.php#main"   style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les tableaux en PHP</a>
   </div>
       </div>
-
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

@@ -18,6 +18,10 @@
 
 
     <section>
+      
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
       <h1>A propos de Sublime Text</h1>
       <p>Sublime Text est un éditeur de texte générique codé en C++ et Python, disponible sur 
@@ -30,9 +34,6 @@
     <p><div>
       <a href="téléchargements/Sublime Text Build 3211 x64 Setup.exe" style="text-decoration: none; font-weight: bold; background-color: lime; color: white; border-radius: 10px; padding: 20px;">Télécharger Sublime Text</a></div></p>
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

@@ -18,6 +18,11 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
+ 
             <div id="main">
     <h1>Les conditions en PHP</h1>
     <h2>Les symboles à connaître</h2>
@@ -125,15 +130,11 @@ switch ($note) // on indique sur quelle variable on travaille
 
 
 
-      <div style="margin-top: 10px;">
+      <div style="margin: 20px 0px;">
     <a href="chap4.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les variables du PHP</a>
     <a href="chap6.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les boucles en PHP</a>
   </div>
       </div>
-
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

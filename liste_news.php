@@ -23,6 +23,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
         <div id="main">
         	<h2><a href="rediger_news.php#main">Ajouter une news</a></h2>
 
@@ -91,9 +95,6 @@ $retour->closeCursor();
 
 
             </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

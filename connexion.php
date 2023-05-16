@@ -19,6 +19,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
               <style type="text/css">
                 span {color: red; font-size: 1.2em;}
@@ -102,9 +106,6 @@ die('Erreur : ' .$e->getMessage());
 
      
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

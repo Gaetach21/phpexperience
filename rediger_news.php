@@ -22,6 +22,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
         <div id="main">
         	<h3><a href="liste_news.php#main">Retour à la liste des news</a></h3>
 
@@ -77,9 +81,6 @@ if (isset($_GET['modifier_news']))
 
 
             </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

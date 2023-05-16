@@ -25,6 +25,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
         <div id="main">
         	<h1>Bienvenue sur mon site!</h1>
         	<p>Voici les dernières news : </p>
@@ -69,9 +73,6 @@ $retour->closeCursor();
     <a href="rediger_news.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Rédiger une news</a>
   </div>
             </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

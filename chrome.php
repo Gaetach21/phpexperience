@@ -18,6 +18,11 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+
+ 
             <div id="main">
       <h1>A propos de Google Chrome</h1>
       <p><strong>Google Chrome</strong> est un navigateur Web développé par Google  qui utilise le moteur de rendu html WebKit. Il fonctionne sous Windows (Windows XP SP2 et supérieur), Mac OS X (Intel uniquement) et Linux (Package Chromium Browser).</p>
@@ -29,8 +34,6 @@
       <a href="téléchargements/Google_Chrome_74.0.3729.131_x64.zip" style="text-decoration: none; font-weight: bold; background-color: lime; color: white; border-radius: 10px; padding: 20px;">Télécharger Google Chrome</a></div></p>
       </div>
 
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

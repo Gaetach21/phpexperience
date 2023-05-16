@@ -19,6 +19,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
             	<div class="container">
       <h1>Bienvenue sur la page de contact</h1>
@@ -79,9 +83,6 @@
     	}
     </script>
       </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

@@ -19,6 +19,10 @@
 
 
     <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+    
             <div id="main">
               <div class="container mt-5">
       <div class="row">
@@ -68,9 +72,6 @@ $req->closeCursor();
 
     </div>
             </div>
-
-      <!-- aside-->
-    <?php include("includes/aside.php")?>
       
     </section>
 

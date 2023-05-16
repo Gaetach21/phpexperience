@@ -18,17 +18,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
     <title>phpexperience | Retenir le pseudo</title>
   </head>
 
-  <body> 
-  <div id="main">
+  <body>
+    <!-- En-tete-->
+    <?php include("includes/header.php")?>
+  
 
-  	<div class="container-fluid p-5 bg-primary text-white text-center">
-  		<h1>phpexperience</h1>
-  		<p>Toute la force du PHP!</p> 
-  	</div>
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
+
+
+    <section>
+
+      <!-- aside-->
+    <?php include("includes/aside.php")?>
+  <div id="main">
 
   	<div class="container mt-5">
       <div class="row">
@@ -79,5 +86,12 @@ $reponse->closeCursor();
 ?>
   	</div> 
   </div> 
+ 
+    </section>
+
+   <!-- Pied de page-->
+   <?php include("includes/footer.php")?>
+   
+   
   </body>
 </html>
