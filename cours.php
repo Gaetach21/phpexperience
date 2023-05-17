@@ -33,7 +33,7 @@
       <li><a href="chap5.php#main">Les conditions en PHP</a></li>
       <li><a href="chap6.php#main">Les boucles en PHP</a></li>
       <li><a href="chap7.php#main">Les tableaux en PHP</a></li>
-      <li><a href="cours/chap8.php">Les fonctions en PHP</a></li>
+      <li><a href="chap8.php">Les fonctions en PHP</a></li>
       <li><a href="cours/chap12.php">Les constantes en PHP</a></li>
       <li><a href="cours/chap14sur27_Les instructions include et require.php">Les instructions include et require</a></li>
       <li><a href="cours/chap15sur27_Les opérations sur les fichiers en PHP.php">Les opérations sur les fichiers en PHP</a></li>
