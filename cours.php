@@ -35,6 +35,7 @@
       <li><a href="chap7.php#main">Les tableaux en PHP</a></li>
       <li><a href="chap8.php#main">Les fonctions en PHP</a></li>
       <li><a href="chap9.php#main">Les fonctions relatives aux string</a></li>
+      <li><a href="chap10.php#main">Les fonctions affectant les array</a></li>
       <li><a href="cours/chap12.php">Les constantes en PHP</a></li>
       <li><a href="cours/chap14sur27_Les instructions include et require.php">Les instructions include et require</a></li>
       <li><a href="cours/chap15sur27_Les opérations sur les fichiers en PHP.php">Les opérations sur les fichiers en PHP</a></li>
