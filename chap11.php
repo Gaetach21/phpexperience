@@ -406,7 +406,7 @@ setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 
       <div style="margin: 20px 0px;">
     <a href="chap10.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les fonctions affectant les array</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les constantes en PHP</a>
+    <a href="chap12.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les constantes en PHP</a>
   </div>
       </div>
 
