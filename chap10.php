@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
-    <title>phpexperience - Les fonctions en PHP</title>
+    <title>phpexperience - Les fonctions affectant les array</title>
   </head>
 
   <body>
@@ -226,7 +226,7 @@
 
       <div style="margin: 20px 0px;">
     <a href="chap9.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les fonctions relatives aux string</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les fonctions relatives à la date en PHP</a>
+    <a href="chap10.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les fonctions relatives à la date en PHP</a>
   </div>
       </div>
 
