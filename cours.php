@@ -38,6 +38,7 @@
       <li><a href="chap10.php#main">Les fonctions affectant les array</a></li>
       <li><a href="chap11.php#main">Les fonctions relatives à la date en PHP</a></li>
       <li><a href="chap12.php#main">Les constantes en PHP</a></li>
+      <li><a href="chap13.php#main">Les formulaires en PHP</a></li>
       <li><a href="cours/chap14sur27_Les instructions include et require.php">Les instructions include et require</a></li>
       <li><a href="cours/chap15sur27_Les opérations sur les fichiers en PHP.php">Les opérations sur les fichiers en PHP</a></li>
       <li><a href="cours/chap16sur27_Variables superglobales en PHP.php">Variables superglobales en PHP</a></li>
