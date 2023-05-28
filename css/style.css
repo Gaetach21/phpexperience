@@ -74,7 +74,7 @@ header .navbar li  a:hover
 	color: #fff;
 	border-bottom: 2px solid #fff;
 }
-.navbar li ul
+header .navbar li ul
 {
 	display: none;
 }
