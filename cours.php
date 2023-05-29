@@ -41,7 +41,7 @@
       <li><a href="chap13.php#main">Les formulaires en PHP</a></li>
       <li><a href="chap14.php#main">Les instructions include et require</a></li>
       <li><a href="chap15.php#main">Les opérations sur les fichiers en PHP</a></li>
-      <li><a href="cours/chap16sur27_Variables superglobales en PHP.php">Variables superglobales en PHP</a></li>
+      <li><a href="chap16.php#main">Variables superglobales en PHP</a></li>
       <li><a href="cours/chap20.php">Connexion à MySQL</a></li>
       <li><a href="cours/chap21.php">Insertion des données dans une BDD via PHP</a></li>
       <li><a href="cours/chap22.php">Sélection des données dans une BDD via PHP</a></li>

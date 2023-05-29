@@ -190,8 +190,8 @@
 
 
       <div style="margin: 20px 0px;">
-    <a href="chap14.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les instructions include et require</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Variables superglobales en PHP</a>
+    <a href=c  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Les instructions include et require</a>
+    <a href="chap16.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Variables superglobales en PHP</a>
   </div>
   </div>
 
