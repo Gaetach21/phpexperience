@@ -66,7 +66,7 @@ echo "On met très souvent les méthodes en public.<br>";
             
       <div style="margin: 20px 0px;">
     <a href="chap16.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Variables superglobales en PHP</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Gestion des erreurs en PHP</a>
+    <a href="chap18.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Gestion des erreurs en PHP</a>
   </div>
   </div>
 
