@@ -44,6 +44,7 @@
       <li><a href="chap16.php#main">Variables superglobales en PHP</a></li>
       <li><a href="chap17.php#main">Les bases de la POO en PHP</a></li>
       <li><a href="chap18.php#main">Gestion des erreurs en PHP</a></li>
+      <li><a href="chap19.php#main">Découverte de MySQL</a></li>
       <li><a href="cours/chap20.php">Connexion à MySQL</a></li>
       <li><a href="cours/chap21.php">Insertion des données dans une BDD via PHP</a></li>
       <li><a href="cours/chap22.php">Sélection des données dans une BDD via PHP</a></li>
