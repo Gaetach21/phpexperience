@@ -46,7 +46,7 @@
       <li><a href="chap18.php#main">Gestion des erreurs en PHP</a></li>
       <li><a href="chap19.php#main">Découverte de MySQL</a></li>
       <li><a href="chap20.php#main">Connexion à MySQL</a></li>
-      <li><a href="cours/chap21.php">Insertion des données dans une BDD via PHP</a></li>
+      <li><a href="chap21.php#main">Insertion des données dans une BDD via PHP</a></li>
       <li><a href="cours/chap22.php">Sélection des données dans une BDD via PHP</a></li>
        <li><a href="cours/chap23sur27_Mise à jour et suppression de données dans une BDD.php">
       Mise à jour et suppression de données dans une BDD</a></li>
