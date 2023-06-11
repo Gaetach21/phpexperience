@@ -178,7 +178,7 @@
 
       <div style="margin: 20px 0px;">
     <a href="chap20.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Connexion à MySQL</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Sélection des données dans une BDD via PHP</a>
+    <a href="chap22.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Sélection des données dans une BDD via PHP</a>
   </div>
       </div>
 
