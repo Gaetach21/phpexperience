@@ -48,8 +48,9 @@
       <li><a href="chap20.php#main">Connexion à MySQL</a></li>
       <li><a href="chap21.php#main">Insertion des données dans une BDD via PHP</a></li>
       <li><a href="chap22.php#main">Sélection des données dans une BDD via PHP</a></li>
-       <li><a href="cours/chap23sur27_Mise à jour et suppression de données dans une BDD.php">
+       <li><a href="chap23.php#main">
       Mise à jour et suppression de données dans une BDD</a></li>
+      <li><a href="">Les jointures SQL</a></li>
     </ol>
       </div>
       

@@ -503,7 +503,7 @@
 
       <div style="margin: 20px 0px;">
     <a href="chap21.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Insertion des données dans une BDD via PHP</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Mise à jour et suppression de données dans une BDD</a>
+    <a href="chap23.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Mise à jour et suppression de données dans une BDD</a>
   </div>
       </div>
 
