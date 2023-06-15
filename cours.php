@@ -50,7 +50,7 @@
       <li><a href="chap22.php#main">Sélection des données dans une BDD via PHP</a></li>
        <li><a href="chap23.php#main">
       Mise à jour et suppression de données dans une BDD</a></li>
-      <li><a href="">Les jointures SQL</a></li>
+      <li><a href="chap24.php#main">Les jointures SQL</a></li>
     </ol>
       </div>
       
