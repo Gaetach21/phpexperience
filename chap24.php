@@ -414,7 +414,7 @@
 
       <div style="margin: 20px 0px;">
     <a href="chap23.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em;">Mise à jour et suppression de données dans une BDD</a>
-    <a href=""  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les fonctions SQL</a>
+    <a href="chap25.php#main"  style="text-decoration: none; background-color: #64abfb; padding: 20px; color: white; font-size: 1.2em; margin-right: 25px;">Les fonctions SQL</a>
   </div>
       </div>
 
