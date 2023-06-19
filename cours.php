@@ -53,6 +53,7 @@
       <li><a href="chap24.php#main">Les jointures SQL</a></li>
       <li><a href="chap25.php#main">Les fonctions SQL</a></li>
       <li><a href="chap26.php#main">Les filtres PHP</a></li>
+      <li><a href="chap27.php#main">Les expressions régulières</a></li>
     </ol>
       </div>
       
