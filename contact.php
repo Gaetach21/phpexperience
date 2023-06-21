@@ -24,6 +24,12 @@
     <?php include("includes/aside.php")?>
     
             <div id="main">
+
+     <style type="text/css">
+                span {color: red; font-size: 1.2em;}
+              </style>
+
+
             	<div class="container">
       <h1>Bienvenue sur la page de contact</h1>
       <p>Veuillez remplir le formulaire ci-dessous et nous vous répondrons 
@@ -45,14 +51,14 @@
         <textarea name="msg" id="msg" placeholder="Entrez votre message" required="required"></textarea>
         <span id="msg_invalide"></span><br>
 
-        <input type="submit" value="Valider" id="bouton_envoi">
+        <input type="submit" value="Valider" name ="valider" id="bouton_envoi">
         <input type="reset" value="Effacer">
     </form>
     </div>
 
-    <script type="text/javascript" src="validation.js"></script>
+    
       </div>
-      
+<script type="text/javascript" src="validation.js"></script>
     </section>
 
    <!-- Pied de page-->
