@@ -43,7 +43,7 @@
         <li><a href="index_news.php#main">un système de news</a></li>
         <li><a href="connectes.php#main">nombre de visiteurs connectés</a></li>
         <li><a href="#">un espace membres</a></li>
-        <li><a href="#">un chat</a></li>
+        <li><a href="searchbar.php">une barre de recherche</a></li>
       </ol>
       </div>
 

@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+        <link href="css/blog.css" rel ="stylesheet" type="text/css" media="all">
     <title>phpexperience | un blog avec des commentaires</title>
   </head>
 
