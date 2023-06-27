@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <title>phpexperience - Toute la force du PHP!</title>
   </head>
 
