@@ -1,6 +1,6 @@
 <aside>
       	<h1>À propos de l'auteur</h1>
-<p id="photo_gaetan"><img src="images/gaetan.jpg" 
+<p id="photo_gaetan"><img src="../images/gaetan.jpg" 
 alt="Photo de Gaetan" /></p>
 <p>Je m'appelle Gaetan, je suis ingénieur et passionné 
 des technologies du web.<br />

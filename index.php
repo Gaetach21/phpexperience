@@ -1,3 +1,12 @@
+<?php
+  // Initialiser la session
+  session_start();
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+    exit(); 
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -55,6 +64,15 @@
     </style>
 
 <div id="main">
+
+<div class="success">
+    <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
+    <p>C'est votre espace utilisateur.</p>
+    <a href="profil.php">Afficher mon profil</a>
+    <a href="logout.php">Déconnexion</a>
+   
+    </div>
+    
  <div id="first-section" class="section">
    <h1>Apprenez à coder avec le langage PHP</h1>
     <p>Le sigle PHP qui signifie Hypertext Preprocessor est un langage de programmation libre, 
