@@ -25,6 +25,7 @@
 
             <div id="main">
     <h1>Liste des cours</h1>
+
     <ol>
       <li><a href="chap1.php#main">Introduction au PHP</a></li>
       <li><a href="chap2.php#main">Préparez son environnement de travail</a></li>

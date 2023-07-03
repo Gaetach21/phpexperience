@@ -1,3 +1,12 @@
+<?php
+  // Initialiser la session
+  session_start();
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+    exit(); 
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +32,14 @@
     <?php include("includes/aside.php")?>
     
             <div id="main">
+
+  <div class="success">
+    <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
+    <p>C'est votre espace utilisateur.</p>
+    <a href="profil.php">Afficher mon profil</a>
+    <a href="logout.php">Déconnexion</a>
+  </div>
+
       <div class="container mt-5">
         <div style="width: 400px; float: left;">
       <h1>Un Minichat</h1>

@@ -3,7 +3,7 @@
       <ul class="navbar">
         <li><a href="index.php#main">Accueil</a></li>
       <li><a href="cours.php#main">Cours</a></li>
-      <li><a href="#">Mes réalisations</a>
+      <li><a href="#">Mes tutoriels</a>
       <ul style="text-align: center;">
         <li><a href="minichat.php#main">un minichat</a></li>
         <li><a href="livreor.php#main">un livre d'or</a></li>

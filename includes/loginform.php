@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding-bottom: 50px; margin-bottom: 30px;">
       <h1>Bienvenue sur la page de connexion</h1>
       
       <form method="post" action="" name="login">
@@ -11,6 +11,4 @@
         <input type="submit" value="Se connecter" name="submit">
         <p>Vous êtes nouveau ici? <a href="register.php">S'inscrire</a></p>
     </form>
-    <p>Déjà inscrit? 
-  <a href="login.php">Connectez-vous ici</a></p>
     </div>

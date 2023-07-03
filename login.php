@@ -79,12 +79,8 @@ if(isset($_POST['submit'])){
     if ($result) {
         $passwordHash = $result['password'];
         if (password_verify($pass, $passwordHash)) {
-            // vérifier si l'utilisateur est un administrateur ou un utilisateur
-    if ($result['type'] == 'admin') {
-      header('location: admin/home.php');      
-    }else{
-      header('location: index.php');
-    }
+            header('location: dashboard.php');
+    
         } else {
             ?><?php include("includes/loginform.php")?>
         <?php

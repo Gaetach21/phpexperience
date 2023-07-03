@@ -1,12 +1,3 @@
-<?php
-  // Initialiser la session
-  session_start();
-  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-  if(!isset($_SESSION["username"])){
-    header("Location: login.php");
-    exit(); 
-  }
-?>
 <!DOCTYPE html>
 <html>
 
@@ -65,13 +56,7 @@
 
 <div id="main">
 
-<div class="success">
-    <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
-    <p>C'est votre espace utilisateur.</p>
-    <a href="profil.php">Afficher mon profil</a>
-    <a href="logout.php">Déconnexion</a>
-   
-    </div>
+
     
  <div id="first-section" class="section">
    <h1>Apprenez à coder avec le langage PHP</h1>
@@ -103,15 +88,14 @@
  	<h1>Réalisez vos sites web dynamiques grace au langage PHP</h1>
  	<p>Découvrez dans cette section toute la puissance du PHP à travers nos réalisations</p>
  	      <ul style="list-style-type: disc;">
-        <li><a href="authentication_page.php">une page d'authentification</a></li>
-        <li><a href="minichat.php">un minichat</a></li>
-        <li><a href="livreor.php">un livre d'or</a></li>
-        <li><a href="index_commentaires.php">un blog avec des commentaires</a></li>
-        <li><a href="upload.php#main">upload de fichiers</a></li>
-        <li><a href="index_news.php#main">un système de news</a></li>
-        <li><a href="connectes.php#main">nombre de visiteurs connectés</a></li>
-        <li><a href="#">un espace membres</a></li>
-        <li><a href="searchbar.php">une barre de recherche</a></li>
+        <li><a href="login.php">une page d'authentification</a></li>
+        <li><a href="login.php">un minichat</a></li>
+        <li><a href="login.php">un livre d'or</a></li>
+        <li><a href="login.php">un blog avec des commentaires</a></li>
+        <li><a href="login.php">upload de fichiers</a></li>
+        <li><a href="login.php">un système de news</a></li>
+        <li><a href="login.php">nombre de visiteurs connectés</a></li>
+        <li><a href="login.php">une barre de recherche</a></li>
       	</ul>
  </div>
       </div>
