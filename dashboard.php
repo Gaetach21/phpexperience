@@ -24,7 +24,7 @@
       <ul class="navbar">
         <li><a href="" class="disabled">Accueil</a></li>
       <li><a href="cours.php#main">Cours</a></li>
-      <li><a href="#">Mes tutoriels</a>
+      <li><a href="#">Travaux Pratiques</a>
       <ul style="text-align: center;">
         <li><a href="minichat.php#main">un minichat</a></li>
         <li><a href="livreor.php#main">un livre d'or</a></li>
@@ -32,7 +32,7 @@
         <li><a href="authentication_page.php#main">L'authentification</a></li>
       </li>
       </ul>
-      <li><a href="#">Download</a>
+      <li><a href="download.php">Téléchargement</a>
       <ul style="text-align: center;">
         <li><a href="sublimetext.php#main">Sublime Text</a></li>
         <li><a href="wampserver.php#main">Wamp Server</a></li>
@@ -40,7 +40,7 @@
         <li><a href="chrome.php#main">Google Chrome</a></li>
       </li>
       </ul>
-      <li><a href="upload.php#main">Upload</a></li>
+      <li><a href="contact.php">Contact</a></li>
       </ul>
     </header> 
 
