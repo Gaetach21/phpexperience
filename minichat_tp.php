@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
-    <title>phpexperience - Travaux Pratiques!</title>
+    <title>phpexperience - TP : un minichat</title>
   </head>
 
   <body>
