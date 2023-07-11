@@ -1,0 +1,11 @@
+$(document).ready(function(){
+  $('.p2').hide();
+  $('.btn1').click(function(){
+    $('.btn1').hide();
+    $('.p2').show();
+  });
+  $('.btn2').click(function(){
+    $('.btn1').show();
+    $('.p2').hide();
+  });
+}); 
