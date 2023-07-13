@@ -7,7 +7,7 @@
       <ul style="text-align: center;">
         <li><a href="minichat_tp.php#main">un minichat</a></li>
         <li><a href="livreor_tp.php#main">un livre d'or</a></li>
-        <li><a href="index_commentaires.php#main">un blog</a></li>
+        <li><a href="blog_tp.php#main">un blog</a></li>
         <li><a href="authentication_page.php#main">L'authentification</a></li>
       </li>
       </ul>
