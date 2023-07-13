@@ -19,6 +19,8 @@
   </head>
 
   <body>
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
 <header>
       <a href="" class="logo disabled">phpexperience</a>
       <ul class="navbar">
@@ -53,8 +55,7 @@
     </style>
   
 
-    <!-- Logo-->
-    <?php include("includes/logo.php")?>
+    
 
 
     <section>

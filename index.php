@@ -7,17 +7,18 @@
     <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
     <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
-    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience - Toute la force du PHP!</title>
   </head>
 
   <body>
+
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
   	<!-- En-tete-->
   	<?php include("includes/header.php")?>
   
 
-    <!-- Logo-->
-    <?php include("includes/logo.php")?>
+    
 
 
     <section>

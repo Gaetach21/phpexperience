@@ -81,12 +81,13 @@ die('Erreur : ' .$e->getMessage());
   </head>
 
   <body>
+    <!-- Logo-->
+    <?php include("includes/logo.php")?>
     <!-- En-tete-->
     <?php include("includes/header.php")?>
   
 
-    <!-- Logo-->
-    <?php include("includes/logo.php")?>
+    
 
 
     <section>

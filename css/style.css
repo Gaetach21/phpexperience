@@ -8,22 +8,18 @@
 }
 p
 {
-	font-weight: 300;
 	color: #111;
 }
 header
 {
-	position: fixed;
-	top: 0%;
-	left: 0%;
+	position: relative;
 	padding: 20px 10px;
 	width: 100%;
 	background-color: #64abfb;
-	z-index: 1;
 	display: flex;
-	justify-content: space-evenly;
 	align-items: center;
 	transition: 0.5s;
+	border-bottom: 15px solid rgb(128,128,128);
 }
 .logo
 {
@@ -40,7 +36,7 @@ header
 header .navbar
 {
 	background-color: #64abfb;
-	padding: 0;
+	padding: 0px 100px;
 	margin: 0;
 }
 
@@ -50,7 +46,7 @@ header .navbar li
 	line-height: 30px;
 	background-color: #64abfb;
 	color: #fff;
-	padding: 10px;
+	padding: 10px  15px;
 	font-size: 20px;
 }
 li
@@ -101,12 +97,11 @@ header .navbar li ul
 {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 25vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-image: url("php-banner.png");
-	padding-top: 90px;
 }
 .banniere .contenu
 {
