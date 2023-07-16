@@ -1,6 +1,67 @@
+#cookiePopup {
+  background: #444;
+  color: #fff;
+  padding: 6px;
+  font: 11px sans-serif;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 4px 7px;
+}
+
+#cookiePopup p {
+  text-align: center;
+  margin: 1.4em 0;
+}
+#cookiePopup button {
+  text-decoration: none;
+  background: #222;
+  color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+  padding: 4px 7px;
+  margin: 2px 0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.07s, color 0.07s, border-color 0.07s;
+}
+#cookiePopup button:hover {
+  background: #fff;
+  color: #222;
+}
+#cookiePopup a {
+  color: #64abfb;
+}
+.hide {
+  visibility: hidden;
+  bottom: 0;
+  right: 2em;
+}
+.show {
+  visibility: visible;
+  bottom: 2em;
+  right: 2em;
+}
+@media only screen and (max-width: 37.5em) {
+  #cookiePopup {
+    width: 100%;
+  }
+  .hide {
+    bottom: 2em;
+    right: 0;
+  }
+  .show {
+    right: 0;
+    bottom: 0;
+  }
+}
 *
 {
-	margin: 0px;
+
+  	box-sizing: border-box;
+ 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 	font-family: sans-serif;
