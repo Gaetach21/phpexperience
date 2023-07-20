@@ -8,7 +8,7 @@
         <li><a href="minichat_tp.php#main">un minichat</a></li>
         <li><a href="livreor_tp.php#main">un livre d'or</a></li>
         <li><a href="blog_tp.php#main">un blog</a></li>
-        <li><a href="authentication_page.php#main">L'authentification</a></li>
+        <li><a href="authentication_tp.php#main">L'authentification</a></li>
       </li>
       </ul>
       <li><a href="download.php">Téléchargement</a>

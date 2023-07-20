@@ -179,6 +179,27 @@ d'un lien de retour.</p>
   <p>On ne se connecte à la base de données qu'une fois par page. On récupère avec cette requête tous les commentaires liés 
   au billet correspondant à l'id reçu dans l'URL. Les commentaires sont triés par date croissante.</p>
  </div>
+
+  <div id="fourth-section" class="section">
+   <h1>TP : Page protégée par mot de passe</h1>
+  <p>Nous allons protéger le contenu d'une page par mot de passe .</p>
+  <h2>Prérequis</h2>
+  <ul>
+     <li>afficher du texte avec echo ;</li>
+     <li>utiliser les variables (affectation, affichage…) ;</li>
+     <li>transmettre des variables via une zone de texte d'un formulaire ;</li>
+     <li>utiliser des conditions simples ( if  , else  ).</li>
+  </ul>
+  <h2>Objectifs</h2>
+  <p>Nous allons mettre en ligne une page web pour donner des informations confidentielles à certaines 
+  personnes. Cependant, pour limiter l'accès à cette page, il faudra connaître un mot de passe.</p>
+  <h2>Structure des pages PHP</h2>
+  <p>Nous allons créer deux pages web :</p>
+  <ul>
+    <li><strong>formulaire.php</strong> : contient un simple formulaire comme vous savez les faire ;</li>
+    <li><strong>secret.php</strong> : contient les « codes secrets » mais ne les affiche que si on lui donne le mot de passe.</li>
+  </ul>
+ </div>
       </div>
 
     </section>
