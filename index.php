@@ -7,6 +7,7 @@
     <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
     <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience - Toute la force du PHP!</title>
   </head>
 
@@ -54,6 +55,11 @@
       #third-section
 {
 	background-color: rgb(205,182,175);
+}
+#first-section, #second-section, #third-section
+{
+  display: inline-block;
+  width: 300px;
 }
     </style>
 
@@ -111,25 +117,38 @@ window.onload = () => {
   }, 2000);
 };
     </script>
+    <h1>Réalisez vos sites web dynamiques grace au langage PHP</h1>
+  <div id="slider">
+        <img src="../images/slide1.jpg" id="slide1">
+        <img src="../images/slide2.jpg" id="slide2">
+        <img src="../images/slide3.jpg" id="slide3">
+        <img src="../images/slide4.jpg" id="slide4">
+        <img src="../images/slide5.jpg" id="slide5">
+        <img src="../images/slide6.jpg" id="slide6">
+        <img src="../images/slide7.jpg" id="slide7">
+        <div id="precedent" id="precedent"><</div>
+        <div id="suivant" id="suivant">></div>
+    </div>
+    <script src="../jQuery/file2.js"></script>
     
  <div id="first-section" class="section">
-   <h1>Apprenez à coder avec le langage PHP</h1>
-    <p>Le sigle PHP qui signifie Hypertext Preprocessor est un langage de programmation libre, 
-    	principalement utilisé pour produire des pages web dynamiques via un serveur web.</p>
-    <p>Ce langage possède de nombreux atouts : 
+   <h2>Apprenez à coder avec le langage PHP</h2>
+    <!-- <p>Le sigle PHP qui signifie Hypertext Preprocessor est un langage de programmation libre, 
+    	principalement utilisé pour produire des pages web dynamiques via un serveur web.</p> -->
+    <p>Le langage PHP (Hypertext Preprocessor) possède de nombreux atouts : 
     	<ul style="list-style-type: circle;">
-    		<li>La gratuité et la disponibilité du code source (PHP est distribué sous licence GNU GPL);</li>
-    		<li>La simplicité d'écriture de scripts;</li>
+    		<li>La gratuité et la disponibilité du code source;</li>
+    		 <li>La simplicité d'écriture de scripts;</li>
     		<li>La possibilité d'inclure le script PHP au sein d'une page HTML</li>
     		<li>La simplicité d'interfaçage avec des bases de données (SGBD supportés : MySQL, Oracle, PostgreSQL...)</li>
     	</ul></p>
  </div>
 
  <div id="second-section" class="section">
- 	<h1>Suivez les cours sur le PHP et MySQL sur phpexperience</h1>
- 	<p>phpexperience vous permet d'apprendre et de maitriser le langage PHP en commençant à zéro.</p>
+ 	<h2>Suivez nos cours sur le PHP et MySQL</h2>
+<!--  	<p>phpexperience vous permet d'apprendre et de maitriser le langage PHP en commençant à zéro.</p>
  	<p>Consultez la liste de notre cours sur ce langage en cliquant sur <a href="cours.php">cours</a> au niveau 
- 	de la barre des menus.</p>
+ 	de la barre des menus.</p> -->
  	<p>Les principales articulations de ce cours se déclinent comme suit :
  		<ul style="list-style-type: square;">
  			<li>Notions de base (variables, fonctions, conditions, boucles, tableaux);</li>
@@ -139,10 +158,10 @@ window.onload = () => {
  </div>
 
  <div id="third-section" class="section">
- 	<h1>Réalisez vos sites web dynamiques grace au langage PHP</h1>
- 	<p>Découvrez dans cette section toute la puissance du PHP à travers nos réalisations</p>
+ 	<h2>Profitez de nos réalisations grace au langage PHP</h2>
+ 	<p>Découvrez dans cette section toute la puissance du PHP à travers nos réalisations
  	      <ul style="list-style-type: disc;">
-        <li><a href="login.php">une page d'authentification</a></li>
+        <!-- <li><a href="login.php">une page d'authentification</a></li> -->
         <li><a href="login.php">un minichat</a></li>
         <li><a href="login.php">un livre d'or</a></li>
         <li><a href="login.php">un blog avec des commentaires</a></li>
@@ -150,7 +169,7 @@ window.onload = () => {
         <li><a href="login.php">un système de news</a></li>
         <li><a href="login.php">nombre de visiteurs connectés</a></li>
         <li><a href="login.php">une barre de recherche</a></li>
-      	</ul>
+      	</ul></p>
  </div>
       </div>
 
