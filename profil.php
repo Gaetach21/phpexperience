@@ -2,7 +2,7 @@
    // Initialiser la session
   session_start();
   // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-  if(!isset($_SESSION["username"])){
+  if(!isset($_SESSION["name"])){
     header("Location: login.php");
     exit(); 
   }
@@ -17,13 +17,13 @@ catch(Exception $e)
 die('Erreur : ' .$e->getMessage());
 }
 //récupérer username à partie de la session
-   $username = $_SESSION["username"];
+   $name = $_SESSION["name"];
    //requête SQl pour récupérer tous les informations de l'utilisateur
-   $requete = $bdd->query("SELECT * FROM users WHERE username='".$username."'");
+   $requete = $bdd->query("SELECT * FROM utilisateurs WHERE name='".$name."'");
    $row = $requete->fetch();
    //le résultat de la requête sera stocké dans le tableau $row[]
    $id = $row['id'];
-   $username = $row['username'];
+   $name = $row['name'];
    $email = $row['email'];
  
     ?>
@@ -40,7 +40,20 @@ die('Erreur : ' .$e->getMessage());
 
   <body>
     <!-- Logo-->
-    <?php include("includes/logo.php")?>
+     <section class="banniere" id="banniere">
+<div class="contenu">
+<h1>phpexperience</h1>
+<a href="dashboard.php" class="btn" style="background-color: rgb(128,128,128);">Tableau de bord</a>
+
+<!-- <h1>J'apprends le PHP</h1>
+<p>Aujourd'hui nous sommes le 
+<?php
+// echo date('d/m/Y h:i:s');
+?>
+</p> -->
+
+</div>
+</section>
   	<!-- En-tete-->
   	<?php include("includes/header.php")?>
   
@@ -53,6 +66,11 @@ die('Erreur : ' .$e->getMessage());
       <!-- aside-->
     <?php include("includes/aside.php")?>
     <style type="text/css">
+      .disabled{
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+      }
     	.section
 {
 	text-align: justify; 
@@ -81,7 +99,7 @@ die('Erreur : ' .$e->getMessage());
     <h1>Bienvenue sur votre page de profil</h1>
     <p>les informations sur votre compte utilisateur sont les suivantes : </p>
     <p>Identifiant : <strong><?php echo $id."<br>"; ?></strong></p>
-    <p>Nom d'utilisateur : <strong><?php echo $username."<br>"; ?></strong></p>
+    <p>Nom d'utilisateur : <strong><?php echo $name."<br>"; ?></strong></p>
     <p>Adresse email : <strong><?php echo $email."<br>"; ?></strong></p>
     <p>Pour vous déconnecter, il suffit de cliquer sur le lien ci-dessous : </p>
     <a href="logout.php">Déconnexion</a>
@@ -90,6 +108,7 @@ die('Erreur : ' .$e->getMessage());
 
       </div>
 
+      <?php include("includes/realisations.php")?>
     </section>
 
    <!-- Pied de page-->

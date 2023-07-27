@@ -9,6 +9,6 @@
         <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe"><br>
 
         <input type="submit" value="Se connecter" name="submit">
-        <p>Vous êtes nouveau ici? <a href="register.php">S'inscrire</a></p>
+        <p>Vous êtes nouveau ici? <a href="register.php">S'inscrire</a></p><br><br>
     </form>
     </div>

@@ -49,14 +49,14 @@ if(isset($_POST['submit'])){
 
 //On les rend inoffensives, les balises HTML que le visiteur a pu entrer.
 //On vérifie si tous les champs sont remplis
-    if(empty($_POST['username']) && empty($_POST['password'])){
+    if(empty($_POST['name']) && empty($_POST['password'])){
     	?><?php include("includes/loginform.php")?>
     	<?php
     //Si tous les champs sont vides
         echo "<span>Les deux champs sont obligatoires!</span><br>";
     } 
 
-    elseif(empty($_POST['username']) || empty($_POST['password'])){
+    elseif(empty($_POST['name']) || empty($_POST['password'])){
         ?><?php include("includes/loginform.php")?>
         <?php
     //Si un des champs est vide
@@ -65,13 +65,13 @@ if(isset($_POST['submit'])){
 
     else
     {
-      $username= $_POST['username'];
-  $_SESSION['username'] = $username;
+      $name= $_POST['name'];
+  $_SESSION['name'] = $name;
 
     $pass= $_POST['password'];
     //on fait maintenant la requête dans la base de données pour rechercher si ces données existent et correspondent:
-    $req = $bdd->prepare('SELECT * FROM users WHERE username = :username');
-    $req->bindValue('username', $username);
+    $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE name = :name');
+    $req->bindValue('name', $name);
     $req->execute();
     $result = $req->fetch(PDO::FETCH_ASSOC);
     
@@ -85,7 +85,7 @@ if(isset($_POST['submit'])){
         } else {
             ?><?php include("includes/loginform.php")?>
         <?php
-            echo "<span>Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé!</span>";
+            echo "<span>Le nom ou le mot de passe est incorrect, le compte n'a pas été trouvé!</span>";
         }
     } 
 }

@@ -2,7 +2,7 @@
   // Initialiser la session
   session_start();
   // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-  if(!isset($_SESSION["username"])){
+  if(!isset($_SESSION["name"])){
     header("Location: login.php");
     exit(); 
   }
@@ -26,12 +26,31 @@
 
   <body>
     <!-- Logo-->
-    <?php include("includes/logo.php")?>
+    <section class="banniere" id="banniere">
+<div class="contenu">
+<h1>phpexperience</h1>
+<a href="dashboard.php" class="btn" style="background-color: rgb(128,128,128);">Tableau de bord</a>
+
+<!-- <h1>J'apprends le PHP</h1>
+<p>Aujourd'hui nous sommes le 
+<?php
+// echo date('d/m/Y h:i:s');
+?>
+</p> -->
+
+</div>
+</section>
     <!-- En-tete-->
     <?php include("includes/header.php")?>
   
 
-    
+    <style type="text/css">
+      .disabled{
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+      }
+    </style>
 
 
     <section>
@@ -41,7 +60,7 @@
     
         <div id="main">
   <div class="success">
-    <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
+    <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
     <p>C'est votre espace utilisateur.</p>
     <a href="profil.php">Afficher mon profil</a>
     <a href="logout.php">Déconnexion</a>
@@ -91,6 +110,7 @@ $retour->closeCursor();
   </div>
             </div>
       
+      <?php include("includes/realisations.php")?>
     </section>
 
    <!-- Pied de page-->
