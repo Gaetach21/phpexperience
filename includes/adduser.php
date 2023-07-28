@@ -2,8 +2,8 @@
       <h1>Création d'un utilisateur</h1>
       
       <form method="post" action="">
-        <label for="username">username</label><br>
-        <input type="text" name="username" id="username" placeholder="Entrez votre username"> <br>     
+        <label for="name">Nom</label><br>
+        <input type="text" name="name" id="name" placeholder="Entrez votre nom"> <br>     
 
         <label for="email">Email</label><br>
         <input type="email" name="email" id="email" placeholder="Entrez votre adresse email"><br>
@@ -14,10 +14,13 @@
         <option value="admin">Admin</option>
         <option value="user">User</option>
       </select>
-  </div>
+        </div>
 
         <label for="password">Mot de passe</label><br>
         <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe"><br>
+
+        <label for="confpwd">Confirmation</label><br>
+        <input type="password" name="confpwd" id="confpwd" placeholder="Confirmez votre mot de passe"><br><br>
 
         <input type="submit" name="submit" value="Créer">
     </form>
