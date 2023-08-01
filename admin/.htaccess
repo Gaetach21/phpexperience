@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "C:\laragon\www\phpexperience\admin\.htpassword"
+Require valid-user
