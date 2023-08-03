@@ -171,7 +171,8 @@ $query->closeCursor();
                     </ul>
     </nav>
   </div> 
- 
+  
+ <?php include("includes/realisations.php")?>
     </section>
 
    <!-- Pied de page-->

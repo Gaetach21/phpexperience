@@ -13,7 +13,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience | un livre d'or</title>
   </head>
 
@@ -43,6 +47,9 @@
         pointer-events: none;
         text-decoration: none;
       }
+    table, th, td {border: 2px solid white; 
+      padding: 5px;
+      border-collapse: collapse;}
     </style>
 
 
@@ -53,33 +60,38 @@
     
             <div id="main">
 
-                <div class="success">
+  <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
-    <p>C'est votre espace utilisateur.</p>
+    <?php
+    if ($_SESSION['name'] == 'gaetan') {
+      echo "<p>C'est votre espace admin.</p>";
+    }
+    else
+    {
+      echo "<p>C'est votre espace utilisateur.</p>";
+    }
+    ?>
     <a href="profil.php">Afficher mon profil</a>
     <a href="logout.php">Déconnexion</a>
   </div>
 
-        <div>
+        <div class="container">
       <h1>Un Livre d'or</h1>
       <div class="formulaire">
-      <form action="livreor.php" method="post" class="form">
-        <p><strong>Mon site s'il vous plait? Laissez-moi un message!</strong></p>
-<p>
-<label for="pseudo">Votre pseudo</label> : <input type="text" name="pseudo" id="pseudo" class="form-control" placeholder="Rentre ton pseudo" maxlength="8" required/><br/>
-<label for="message">Votre message</label> <br /> 
-<textarea name="message" id="message" class="form-control"
-placeholder="Rentre ton message" rows="8" cols="35" required></textarea><br/>
-<input type="submit" value="Envoyer" name="envoyer" class="form-control bg-primary mx-2" />
-<input type="reset" value="Réinitialiser" name="reset" class="form-control bg-primary mx-2" />
-<input type="button" value="Rafraichir" name="refresh" onclick="location.reload();" class="form-control bg-primary mx-2" />
-</p>
-</form>
-</div>
+
+        <form action="livreor.php" method="post">
+          <p><strong>Mon site s'il vous plait? Laissez-moi un message!</strong></p>
+           <label for="pseudo">Votre pseudo</label><br> 
+            <input type="text" name="pseudo" id="pseudo" placeholder="Rentre ton pseudo" maxlength="8" required="required"> <br>
+            <label for="message">Message</label><br> 
+            <textarea name="message" id="message" placeholder="Rentre ton message"  required="required"></textarea><br>
+            <input type="submit" name="Envoyer" value="Envoyer" />
+            <input type="reset" name="reset" value="Réinitialiser" />
+    </form>
 
 </div>
 
-
+</div>
 
 <?php
 // Connexion à la base de données
@@ -114,30 +126,28 @@ header('Location: livreor.php');
 }
 }
 
+
 // Etape2
 // On écrit les liens vers chacune des pages
 // On met dans une variable le nombre de messages qu'on veut par page
-$nombreDeMessagesParPage = 1;
+$nombreDeMessagesParPage = 5;
 // On récupère le nombre total de messages
-$retour = $bdd -> query('SELECT COUNT(*) AS nb_messages FROM livreor');
+$retour = $bdd -> prepare('SELECT COUNT(*) AS nb_messages FROM livreor');
+$retour->execute();
 $donnees = $retour -> fetch();
-$totalDesMessages = $donnees['nb_messages'];
+$totalDesMessages = (int) $donnees['nb_messages'];
 // On calcule le nombre de pages à créer
-$nombreDePages = ceil($totalDesMessages/$nombreDeMessagesParPage);
-// Puis on fait une boucle pour écrire les liens vers chacune des pages
-echo 'page:';
-for($i=1; $i<=$nombreDePages;$i++)
-{
-  echo '<a href="livreor.php?page='.$i.'">'.$i.'</a>';
-}
+$nombreDePages = ceil($totalDesMessages / $nombreDeMessagesParPage);
+
 
 //Nous avons decidé d'utiliser un tableau pour afficher cette etiquette.  
-echo'<table width=90%>  
+echo'<table width=100%>  
 <tr>  
-<th width=45% bgcolor=green> pseudo</th>  
-<th width=45% bgcolor=green><font>Message</font></th>  
+<th width=900px bgcolor=green>pseudo</th>  
+<th width=85% bgcolor=green>Message</th>  
 </tr>  
 </table>'; 
+
 // Etape3
 // On affiche les messages
 // Vérification sur la page
@@ -149,22 +159,34 @@ else
 {
     $page = 1;
 }
- 
-  
-//Utilisation d'une requête préparée :
-$reponse = $bdd->prepare('SELECT * FROM livreor ORDER BY id DESC LIMIT :limitebasse,1');
-$reponse->bindValue(':limitebasse', '(($page-1)*1)', PDO::PARAM_INT);
-$reponse->execute();
- 
-//on recupère chaque entrée une à une pour l'afficher
-while ($donnees = $reponse->fetch())
-{
-    echo'<table><tr><td width=73% bgcolor=#6495ED>
-    <p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> a écrit : <br />' .$donnees['date_creation'].'</td>'. '<td  padding=100% bgcolor=#cccccc>'. htmlspecialchars($donnees['message']) . '</p> </td></table> ';
-}
-  
 
-$reponse->closeCursor();
+
+ // Calcul du 1er message de la page
+$premier = ($page * $nombreDeMessagesParPage) - $nombreDeMessagesParPage; 
+//Utilisation d'une requête préparée :
+$retour = $bdd->prepare('SELECT * FROM livreor ORDER BY id DESC LIMIT :premier, :nombreDeMessagesParPage');
+$retour->bindValue(':premier', $premier, PDO::PARAM_INT);
+$retour->bindValue(':nombreDeMessagesParPage', $nombreDeMessagesParPage, PDO::PARAM_INT);
+$retour->execute();
+
+
+//on recupère chaque entrée une à une pour l'afficher
+while ($donnees = $retour->fetch())
+{
+    echo'<table><tr><td width=900px bgcolor=#6495ED>
+    <strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> a écrit : <br />' .$donnees['date_creation'].'</td><td  width=85% bgcolor=#cccccc>'. htmlspecialchars($donnees['message']) . '</td></table> ';
+}
+ 
+
+ // Puis on fait une boucle pour écrire les liens vers chacune des pages
+echo 'page : ';
+for($i=1; $i<=$nombreDePages; $i++)
+{
+  echo ' <a href="livreor.php?page=' . $i . '">' . $i . '</a> ';
+}
+
+ 
+$retour->closeCursor();
 
 ?>
      
