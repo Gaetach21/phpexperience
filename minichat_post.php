@@ -79,7 +79,7 @@ die('Erreur : ' .$e->getMessage());
 }
 
 //traitement du formulaire:
-if(isset($_POST['submit'])){
+if(isset($_POST['Envoyer'])){
 
 //On les rend inoffensives, les balises HTML que le visiteur a pu entrer.
 //On vérifie si tous les champs sont remplis

@@ -13,8 +13,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
-        <link href="css/blog.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience | un blog avec commentaires</title>
   </head>
 
@@ -44,7 +47,34 @@
         pointer-events: none;
         text-decoration: none;
       }
-    </style>
+      h3
+{
+    background-color:#64abfb;
+    color:white;
+    font-size:1.2em;
+    margin-bottom:0px;
+}
+.news p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+    font-size:0.9em;
+}
+.news
+{
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+a
+{
+    text-decoration: none;
+    color: blue;
+}    </style>
 
 
     <section>
@@ -54,20 +84,38 @@
     
             <div id="main">
 
-                <div class="success">
+    <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
-    <p>C'est votre espace utilisateur.</p>
+    <?php
+    if ($_SESSION['name'] == 'gaetan') {
+      echo "<p>C'est votre espace admin.</p>";
+    }
+    else
+    {
+      echo "<p>C'est votre espace utilisateur.</p>";
+    }
+    ?>
     <a href="profil.php">Afficher mon profil</a>
     <a href="logout.php">Déconnexion</a>
   </div>
   
-              <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm-6">
-        <h1>Mon super blog !</h1>
-        <p style="text-align: center;">Derniers billets du blog :</p>
+              <div class="container">
+                <h1>Mon super blog !</h1>
+        <div class="formulaire">
+
+        <form action="index_commentaires.php" method="post">
+           <label for="titre">Titre</label><br> 
+            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de l'article" required="required"> <br>
+            <label for="contenu">Contenu</label><br> 
+            <textarea name="contenu" id="contenu" placeholder="Entrez le contenu"  required="required"></textarea><br>
+            <input type="submit" name="Envoyer" value="Publier" />
+    </form>
+
 </div>
 </div>
+        
+        <h1>Derniers billets du blog :</h1>
+        
 
 
 <?php
@@ -81,9 +129,59 @@ catch(Exception $e)
 die('Erreur : ' .$e->getMessage());
 }
 
-// On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 5');
+// Etape1
+// Si le message est envoyé, on l'enregistre
+// On teste si le titre et le contenu ont été envoyés
+if (isset($_POST['titre']) AND isset($_POST['contenu'])) 
+{
 
+// On teste si le titre et le contenu ne sont pas vides
+if (!$_POST['titre'] == "" AND !$_POST['contenu'] == "") 
+{
+
+// Insertion du message à l'aide d'une requête préparée
+$req = $bdd->prepare('INSERT INTO billets (titre, contenu, date_creation) VALUES(?, ?, NOW())');
+$req->execute(array($_POST['titre'], $_POST['contenu']));
+
+}
+else
+{
+// Redirection du visiteur vers la page du livre d'or
+header('Location: index_commentaires.php'); 
+}
+}
+
+// On écrit les liens vers chacune des pages
+// On met dans une variable le nombre de billets qu'on veut par page
+$nombreDeBilletsParPage = 5;
+// On récupère le nombre total de billets
+$req = $bdd -> prepare('SELECT COUNT(*) AS nb_billets FROM billets');
+$req->execute();
+$donnees = $req -> fetch();
+$totalDesBillets = (int) $donnees['nb_billets'];
+// On calcule le nombre de pages à créer
+$nombreDePages = ceil($totalDesBillets / $nombreDeBilletsParPage);
+
+// Vérification sur la page
+if (isset($_GET['page']) && is_numeric($_GET['page']) && ($_GET['page'] > 0))
+{
+    $page = $_GET['page'];
+}
+else
+{
+    $page = 1;
+}
+
+
+ // Calcul du 1er billet de la page
+$premier = ($page * $nombreDeBilletsParPage) - $nombreDeBilletsParPage; 
+//Utilisation d'une requête préparée :
+$req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT :premier, :nombreDeBilletsParPage');
+$req->bindValue(':premier', $premier, PDO::PARAM_INT);
+$req->bindValue(':nombreDeBilletsParPage', $nombreDeBilletsParPage, PDO::PARAM_INT);
+$req->execute();
+
+//on recupère chaque billet pour l'afficher
 while ($donnees = $req->fetch())
 {
 ?>
@@ -104,10 +202,17 @@ while ($donnees = $req->fetch())
 </div>
 <?php
 } // Fin de la boucle des billets
+
+ // Puis on fait une boucle pour écrire les liens vers chacune des pages
+echo 'page : ';
+for($i=1; $i<=$nombreDePages; $i++)
+{
+  echo ' <a href="index_commentaires.php?page=' . $i . '">' . $i . '</a> ';
+}
 $req->closeCursor();
 ?>
 
-    </div>
+    
             </div>
       <?php include("includes/realisations.php")?>
     </section>

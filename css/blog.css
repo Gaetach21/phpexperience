@@ -4,9 +4,9 @@ h1, h3
 }
 h3
 {
-    background-color:black;
+    background-color:#64abfb;
     color:white;
-    font-size:0.9em;
+    font-size:0.7em;
     margin-bottom:0px;
 }
 .news p
@@ -16,8 +16,12 @@ h3
 }
 .news
 {
-    width:70%;
-    margin:auto;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
 }
 
 a
