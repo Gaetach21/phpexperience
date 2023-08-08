@@ -13,8 +13,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
-        <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience - upload de fichiers</title>
     <style type="text/css">
       span {color: red; font-size: 1.2em;}
@@ -55,27 +58,37 @@
       <!-- aside-->
     <?php include("includes/aside.php")?>
     
-            <div id="main">
+<div id="main">
 
-              <div class="success">
+  <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
-    <p>C'est votre espace utilisateur.</p>
+    <?php
+    if ($_SESSION['name'] == 'gaetan') {
+      echo "<p>C'est votre espace admin.</p>";
+    }
+    else
+    {
+      echo "<p>C'est votre espace utilisateur.</p>";
+    }
+    ?>
     <a href="profil.php">Afficher mon profil</a>
     <a href="logout.php">Déconnexion</a>
   </div>
+
             <div class="container">
       <h1>Formulaire d'upload de fichiers</h1>
+      <p>Utilisez ce formulaire pour nous soumettre vos fichiers dans les formats autorisés.</p>
       <form action="upload.php" method="post" enctype="multipart/form-data">
         <p>
-         <label for="photo">Sélectionner un fichier à envoyer :</label><br>
-        <input type="file" name="photo" id="photo"> 
+         <label for="uploadfile">Sélectionner un fichier à envoyer :</label><br>
+        <input type="file" name="uploadfile" id="uploadfile"> 
         </p>
 
         <p>
          <input type="submit" name="Envoi" value="Envoyer le fichier"> 
         </p>
         
-        <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .gif et .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
+        <p><strong>Note:</strong> Seuls les formats .docx, .txt, .zip, .pdf, .mp4, .jpg, .jpeg, .gif et .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
     </form>
     </div>
 
@@ -88,11 +101,11 @@
 // Vérifier si le formulaire a été soumis
 if(isset($_POST['Envoi'])){
     // Vérifie si le fichier a été uploadé sans erreur.
-    if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0){
-        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
-        $filename = $_FILES["photo"]["name"];
-        $filetype = $_FILES["photo"]["type"];
-        $filesize = $_FILES["photo"]["size"];
+    if(isset($_FILES["uploadfile"]) && $_FILES["uploadfile"]["error"] == 0){
+        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png", "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "pdf" => "application/pdf", "zip" => "application/zip", "txt" => "text/plain", "mp4" => "video/mp4");
+        $filename = $_FILES["uploadfile"]["name"];
+        $filetype = $_FILES["uploadfile"]["type"];
+        $filesize = $_FILES["uploadfile"]["size"];
 
         // Vérifie l'extension du fichier
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -105,17 +118,17 @@ if(isset($_POST['Envoi'])){
         // Vérifie le type MIME du fichier
         if(in_array($filetype, $allowed)){
             // Vérifie si le fichier existe avant de le télécharger.
-            if(file_exists("uploads/" . $_FILES["photo"]["name"])){
-                echo '<span>Le fichier '.$_FILES["photo"]["name"] . ' existe déjà!</span>';
+            if(file_exists("uploads/" . $_FILES["uploadfile"]["name"])){
+                echo '<span>Le fichier '.$_FILES["uploadfile"]["name"] . ' existe déjà!</span>';
             } else{
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
+                move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "uploads/" . $_FILES["uploadfile"]["name"]);
                 echo "<h1>Votre fichier a été envoyé avec succès.</h1>";
             } 
         } else{
             echo "<span>Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer!</span>"; 
         }
     } else{
-        echo "<span>Erreur: " . $_FILES["photo"]["error"]."</span>";
+        echo "<span>Erreur: Veuillez sélectionner un fichier!</span>";
     }
 }
 ?>
