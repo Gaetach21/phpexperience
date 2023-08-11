@@ -1,12 +1,28 @@
+<?php
+  // Initialiser la session
+  session_start();
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($_SESSION["name"])){
+    header("Location: login.php");
+    exit(); 
+  }
+?>
 <!DOCTYPE html>
 <html>
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience | Liste des news</title>
     <style type="text/css">
+        .disabled{
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+      }
     	#main h2, th, td {text-align: center;}
         table {border-collapse: collapse; border: 2px solid black; margin: auto;}
         th, td {border: 1px solid black; padding: 10px;}
@@ -15,7 +31,20 @@
 
   <body>
     <!-- Logo-->
-    <?php include("includes/logo.php")?>
+    <section class="banniere" id="banniere">
+<div class="contenu">
+<h1>phpexperience</h1>
+<a href="dashboard.php" class="btn" style="background-color: rgb(128,128,128);">Tableau de bord</a>
+
+<!-- <h1>J'apprends le PHP</h1>
+<p>Aujourd'hui nous sommes le 
+<?php
+// echo date('d/m/Y h:i:s');
+?>
+</p> -->
+
+</div>
+</section>
     <!-- En-tete-->
     <?php include("includes/header.php")?>
   
@@ -29,7 +58,24 @@
     <?php include("includes/aside.php")?>
     
         <div id="main">
-        	<h2><a href="rediger_news.php#main">Ajouter une news</a></h2>
+
+            <div class="success">
+    <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
+    <?php
+    if ($_SESSION['name'] == 'gaetan') {
+      echo "<p>C'est votre espace admin.</p>";
+    }
+    else
+    {
+      echo "<p>C'est votre espace utilisateur.</p>";
+    }
+    ?>
+    <a href="profil.php">Afficher mon profil</a>
+    <a href="logout.php">Déconnexion</a>
+  </div>
+
+
+        	<h2><a href="rediger_news.php">Ajouter une news</a></h2>
 
 <?php
 // Connexion à la base de données
@@ -96,7 +142,7 @@ $retour->closeCursor();
 
 
             </div>
-      
+      <?php include("includes/realisations.php")?>
     </section>
 
    <!-- Pied de page-->
