@@ -39,7 +39,10 @@ die('Erreur : ' .$e->getMessage());
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel ="stylesheet" type="text/css" media="all">
-    <link href="css/blog.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/form.css" rel ="stylesheet" type="text/css" media="all">
+    <link href="css/bootstrap.css" rel ="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <script src="jquery-3.6.0.js"></script>
     <title>phpexperience | une barre de recherche sur mon blog</title>
     <style type="text/css">
       form{
@@ -54,9 +57,6 @@ die('Erreur : ' .$e->getMessage());
       }
       input[type="submit"]:hover{
         background-color: #FC4;
-      }
-      a{
-        color: #FA2;
       }
       #resultats{
         width: 620px; font-size: 14pt; margin: 20px auto;
@@ -77,6 +77,40 @@ die('Erreur : ' .$e->getMessage());
         font-size: 16pt; border-bottom: 1px solid #888;
         padding: 10px 0;
       }
+      .disabled{
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+      }
+      h3
+{
+    background-color:#64abfb;
+    color:white;
+    font-size:1.2em;
+    margin-bottom:0px;
+}
+.news p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+    font-size:0.9em;
+}
+.news
+{
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+ a
+{
+    text-decoration: none;
+    color: #FA2;
+} 
+ 
     </style>
   </head>
 
@@ -98,15 +132,6 @@ die('Erreur : ' .$e->getMessage());
 </section>
     <!-- En-tete-->
     <?php include("includes/header.php")?>
-  
-
-    <style type="text/css">
-      .disabled{
-        cursor: default;
-        pointer-events: none;
-        text-decoration: none;
-      }
-    </style>
 
 
     <section>
@@ -118,13 +143,21 @@ die('Erreur : ' .$e->getMessage());
 
                 <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
-    <p>C'est votre espace utilisateur.</p>
+    <?php
+    if ($_SESSION['name'] == 'gaetan') {
+      echo "<p>C'est votre espace admin.</p>";
+    }
+    else
+    {
+      echo "<p>C'est votre espace utilisateur.</p>";
+    }
+    ?>
     <a href="profil.php">Afficher mon profil</a>
     <a href="logout.php">Déconnexion</a>
   </div>
 
   
-              <div class="container mt-5">
+              <div class="container">
       <h1>Une barre de recherche sur mon blog</h1>
       <form name="fo" method="get" action="">
         <input type="text" name="keywords" value="<?php echo $keywords ?>" placeholder="Mots-clés">
@@ -146,6 +179,10 @@ die('Erreur : ' .$e->getMessage());
         ?>
 
 
+<h1>Derniers billets du blog :</h1>
+        
+
+
 <?php
 // Connexion à la base de données
 try
@@ -157,9 +194,38 @@ catch(Exception $e)
 die('Erreur : ' .$e->getMessage());
 }
 
-// On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 5');
 
+// On écrit les liens vers chacune des pages
+// On met dans une variable le nombre de billets qu'on veut par page
+$nombreDeBilletsParPage = 5;
+// On récupère le nombre total de billets
+$req = $bdd -> prepare('SELECT COUNT(*) AS nb_billets FROM billets');
+$req->execute();
+$donnees = $req -> fetch();
+$totalDesBillets = (int) $donnees['nb_billets'];
+// On calcule le nombre de pages à créer
+$nombreDePages = ceil($totalDesBillets / $nombreDeBilletsParPage);
+
+// Vérification sur la page
+if (isset($_GET['page']) && is_numeric($_GET['page']) && ($_GET['page'] > 0))
+{
+    $page = $_GET['page'];
+}
+else
+{
+    $page = 1;
+}
+
+
+ // Calcul du 1er billet de la page
+$premier = ($page * $nombreDeBilletsParPage) - $nombreDeBilletsParPage; 
+//Utilisation d'une requête préparée :
+$req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT :premier, :nombreDeBilletsParPage');
+$req->bindValue(':premier', $premier, PDO::PARAM_INT);
+$req->bindValue(':nombreDeBilletsParPage', $nombreDeBilletsParPage, PDO::PARAM_INT);
+$req->execute();
+
+//on recupère chaque billet pour l'afficher
 while ($donnees = $req->fetch())
 {
 ?>
@@ -180,8 +246,16 @@ while ($donnees = $req->fetch())
 </div>
 <?php
 } // Fin de la boucle des billets
+
+ // Puis on fait une boucle pour écrire les liens vers chacune des pages
+echo 'page : ';
+for($i=1; $i<=$nombreDePages; $i++)
+{
+  echo ' <a href="searchbar.php?page=' . $i . '">' . $i . '</a> ';
+}
 $req->closeCursor();
 ?>
+
 
     </div>
             </div>
