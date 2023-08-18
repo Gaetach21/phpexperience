@@ -155,7 +155,13 @@
     </section>
 
    <!-- Pied de page-->
-   <?php include("../includes/footer.php")?>
+    <footer>
+      <div class="copyright">
+          <p>Copyright <?php echo date("Y"); ?> <a href="index.php">phpexperience</a>. Tous droits reservés 
+       
+          </p>
+      </div>
+    </footer>
    
    
   </body>
