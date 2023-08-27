@@ -53,6 +53,16 @@
         pointer-events: none;
         text-decoration: none;
       }
+      .success{
+            width: 100%;
+            border: 1px solid rgb(177,216,216);
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(177,216,216,0.5);
+            border-radius: 5px;
+            color: green;
+            font-size: 1.2em;
+        }
     
       .section
 {
@@ -96,6 +106,23 @@
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
     <p>C'est votre espace utilisateur.</p>
     <a href="profil.php">Afficher mon profil</a>
+    <?php 
+    
+// Connexion à la base de données
+try
+{
+$bdd = new PDO('mysql:host=localhost; dbname=phpexperience; charset=utf8', 'root', '123abc456');
+}
+catch(Exception $e)
+{
+die('Erreur : ' .$e->getMessage());
+}
+//récupérer username à partie de la session
+   $name = $_SESSION["name"];
+  $retour = $bdd->query("SELECT * FROM utilisateurs WHERE name='".$name."'");
+  $donnees = $retour->fetch();
+    ?>
+    <a href="register.php?modifier_users=<?php echo $donnees['id']; ?>">Modifier mon profil</a>
     <a href="logout.php">Déconnexion</a>
     </div>
     
