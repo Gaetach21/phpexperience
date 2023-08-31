@@ -56,7 +56,7 @@
     <?php include("includes/aside.php")?>
   <div id="main">
 
-<div class="success">
+<div id="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
     <?php
     if ($_SESSION['name'] == 'gaetan') {
@@ -172,6 +172,10 @@ $query->closeCursor();
     </nav>
   </div> 
   
+
+  <script type="text/javascript" src="styles.js"></script>
+
+
  <?php include("includes/realisations.php")?>
     </section>
 

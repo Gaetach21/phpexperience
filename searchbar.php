@@ -45,6 +45,16 @@ die('Erreur : ' .$e->getMessage());
     <script src="jquery-3.6.0.js"></script>
     <title>phpexperience | une barre de recherche sur mon blog</title>
     <style type="text/css">
+      .success{
+            width: 100%;
+            border: 1px solid rgb(177,216,216);
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(177,216,216,0.5);
+            border-radius: 5px;
+            color: green;
+            font-size: 1.2em;
+        }
       form{
         padding: 60px; background-color: rgba(0,0,0,0.2);
       }
@@ -140,7 +150,6 @@ die('Erreur : ' .$e->getMessage());
     <?php include("includes/aside.php")?>
     
             <div id="main">
-
                 <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
     <?php

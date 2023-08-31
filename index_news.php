@@ -46,6 +46,16 @@
         pointer-events: none;
         text-decoration: none;
       }
+      .success{
+            width: 100%;
+            border: 1px solid rgb(177,216,216);
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(177,216,216,0.5);
+            border-radius: 5px;
+            color: green;
+            font-size: 1.2em;
+        }
       #main h3
 {
     background-color:#64abfb;
@@ -78,7 +88,7 @@ a
 
       <!-- aside-->
     <?php include("includes/aside.php")?>
-    
+
         <div id="main">
   <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>

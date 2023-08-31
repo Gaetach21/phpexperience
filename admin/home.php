@@ -54,6 +54,16 @@
         pointer-events: none;
         text-decoration: none;
       }
+      .success{
+            width: 100%;
+            border: 1px solid rgb(177,216,216);
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(177,216,216,0.5);
+            border-radius: 5px;
+            color: green;
+            font-size: 1.2em;
+        }
     
       .section
 {
@@ -112,7 +122,8 @@ die('Erreur : ' .$e->getMessage());
   $retour = $bdd->query("SELECT * FROM utilisateurs WHERE name='".$name."'");
   $donnees = $retour->fetch();
     ?>
-    <div class="sucess">
+
+    <div class="success">
     <h1>Bienvenue <?php echo $_SESSION['name']; ?>!</h1>
     <p>C'est votre espace admin.</p>
     <a href="../register.php?modifier_users=<?php echo $donnees['id']; ?>">Modifier mon profil</a> |
