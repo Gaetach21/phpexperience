@@ -1,5 +1,5 @@
 <header>
-      <a href="index.php" class="logo" class="disabled">phpexperience</a>
+      <a href="index.php" class="logo disabled">phpexperience</a>
       <ul class="navbar">
         <li><a href="index.php" class="disabled">Accueil</a></li>
       <li><a href="cours.php">Cours</a></li>

@@ -69,7 +69,7 @@
     <p>
         <span style="font-weight: 900">phpexperience</span> utilise des cookies pour vous
         fournir la meilleure expérience de navigation possible. Pour en savoir plus, consultez 
-        notre <a href="#">Politique de confidentialité.</a>
+        notre <a href="privacy_policy.php">Politique de confidentialité.</a>
     </p>
     <button id="acceptCookie">Accepter</button>
     <button id="stopCookie" style="background-color: rgb(128,128,128);">Refuser</button>

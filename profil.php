@@ -95,7 +95,7 @@ die('Erreur : ' .$e->getMessage());
 
 <div id="main">
 
-<div class="section">
+<div class="section" style="margin-bottom: 50px;">
     <h1>Bienvenue sur votre page de profil</h1>
     <p>les informations sur votre compte utilisateur sont les suivantes : </p>
     <p>Identifiant : <strong><?php echo $id."<br>"; ?></strong></p>

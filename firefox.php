@@ -23,7 +23,7 @@
       <!-- aside-->
     <?php include("includes/aside.php")?>
     
-            <div id="main">
+            <div id="main" style="margin-bottom: 30px;">
       <h1>A propos de Mozilla Firefox</h1>
       <p><strong>Mozilla Firefox</strong> est un navigateur Web gratuit, développé et distribué par la Mozilla Foundation avec l'aide de centaines de bénévoles grâce aux méthodes de développement du logiciel libre/open source et à la liberté  du code source. Il est compatible avec diverses versions de Windows, Mac OS X et GNU/Linux.</p>
     <figure>
